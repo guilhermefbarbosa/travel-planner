@@ -2,8 +2,10 @@ module github.com/guilhermefbarbosa/travel-planner/api/travel-planner-go
 
 go 1.21
 
-require github.com/gofiber/fiber/v2 v2.48.0
-
+require (
+	github.com/gofiber/fiber/v2 v2.48.0
+	gorm.io/gorm v1.23.8
+)
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/google/uuid v1.3.0 // indirect
