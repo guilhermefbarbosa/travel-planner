@@ -1,6 +1,6 @@
 package main
 
-import "github.com/guilhermefbarbosa/travel-planner/travel-planner-go/src/http"
+import "github.com/guilhermefbarbosa/travel-planner/api/travel-planner-go/src/http"
 
 func main() {
 

@@ -1,4 +1,4 @@
-module github.com/guilhermefbarbosa/travel-planner/travel-planner-go
+module github.com/guilhermefbarbosa/travel-planner/api/travel-planner-go
 
 go 1.21
 
