@@ -11,3 +11,7 @@ type User struct {
 	LastLogin *time.Time `gorm:"default:null"`
 	IsActive  bool       `gorm:"default:true"`
 }
+
+func (u User) TableName() string {
+	return "users"
+}

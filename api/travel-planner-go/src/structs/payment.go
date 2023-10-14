@@ -21,6 +21,10 @@ type Payment struct {
 	TravelID    uuid.UUID     `json:"travel_id" gorm:"type:uuid REFERENCES travels(id)"`
 	Method      PaymentMethod `json:"method" gorm:"type:text"`
 	Description string        `json:"description" gorm:"type:text"`
-	Amount      Money         `json:"amount"`
+	Amount      Money         `json:"amount" gorm:"type:text"`
 	PaidAt      time.Time     `json:"paid_at" gorm:"type:timestamp"`
+}
+
+func (p Payment) TableName() string {
+	return "payments"
 }

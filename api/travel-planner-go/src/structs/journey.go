@@ -26,7 +26,13 @@ type Journey struct {
 	ArrivalTime   time.Time   `json:"arrival_time" gorm:"type:timestamp"`
 	From          string      `json:"from" gorm:"type:text"`
 	To            string      `json:"to" gorm:"type:text"`
-	Price         Money       `json:"price"`
+	Price         Money       `json:"price" gorm:"type:text"`
+	PaymentID     uuid.UUID   `json:"payment_id" gorm:"type:uuid REFERENCES payments(id)"`
+	IsPaid        bool        `json:"is_paid" gorm:"type:boolean"`
 	Description   string      `json:"description" gorm:"type:text"`
 	Details       string      `json:"details" gorm:"type:text"`
+}
+
+func (j Journey) TableName() string {
+	return "journeys"
 }

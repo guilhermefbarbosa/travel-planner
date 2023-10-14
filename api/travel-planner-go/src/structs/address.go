@@ -11,3 +11,7 @@ type Address struct {
 	Country      string `json:"country_name" gorm:"type:text"`
 	ZipCode      string `json:"zip_code" gorm:"type:text"`
 }
+
+func (a Address) TableName() string {
+	return "addresses"
+}

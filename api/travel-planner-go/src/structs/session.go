@@ -11,3 +11,7 @@ type Session struct {
 	StartsAt time.Time `json:"starts_at" gorm:"type:timestamp"`
 	EndsAt   time.Time `json:"ends_at" gorm:"type:timestamp"`
 }
+
+func (s Session) TableName() string {
+	return "sessions"
+}
