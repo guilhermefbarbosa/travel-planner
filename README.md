@@ -4,9 +4,9 @@
 He will become a travel planner that allows users to save their flights and hotels, write down their itinerary and manage their budget.
 
 The project will be built in multiple languages, frameworks and technologies to allow me to learn new skills:
-- The front-end will be built in `React`, `Flutter` and `Kotlin`
+- The front-end will be built in `React`, `Flutter`, `Angular 9` and `Kotlin`
 - The back-end will be built in `Go`, `C#`, `Python` and `Kotlin`
-- Data will be stored in `Postgres`, `MongoDB` and `Redis`
+- Data will be stored in `Postgres`, `MongoDB` and `Redis` in different back-end implementations.
 
 ## Project Structure
 
