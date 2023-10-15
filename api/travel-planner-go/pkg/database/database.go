@@ -26,11 +26,17 @@ type Config struct {
 	Type     DatabaseType `env:"DB_TYPE,required"`
 }
 
+var globalDatabase *Database
+
 type Database struct {
 	conn *gorm.DB
 }
 
-func NewDatabase(c Config) *Database {
+func NewDatabase(c Config) Database {
+	if globalDatabase != nil {
+		return *globalDatabase
+	}
+
 	dialector, err := getDialectorByDBType(c)
 	if err != nil {
 		panic(err)
@@ -41,13 +47,19 @@ func NewDatabase(c Config) *Database {
 		panic(err)
 	}
 
-	return &Database{
+	database := Database{
 		conn: conn,
 	}
+	globalDatabase = &database
+	return database
 }
 
 func (d *Database) Conn() *gorm.DB {
 	return d.conn
+}
+
+func Get() *Database {
+	return globalDatabase
 }
 
 func getDialectorByDBType(c Config) (gorm.Dialector, error) {
